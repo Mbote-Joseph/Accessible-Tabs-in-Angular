@@ -1,0 +1,72 @@
+<main>
+  <div class="tabs">
+    <div
+      role="tablist"
+      aria-label="options"
+      (keyup)="handleKeyUp($event)"
+      (keydown)="handleKeyDown($event)"
+    >
+      <app-tab-trigger
+        triggerId="trigger-a"
+        panelId="panel-a"
+        [isActive]="activated === 0"
+        (click)="activatePanel(0)"
+      >
+        Panel A
+      </app-tab-trigger>
+      <app-tab-trigger
+        triggerId="trigger-b"
+        panelId="panel-b"
+        [isActive]="activated === 1"
+        (click)="activatePanel(1)"
+      >
+        Panel B
+      </app-tab-trigger>
+      <app-tab-trigger
+        triggerId="trigger-c"
+        panelId="panel-c"
+        [isActive]="activated === 2"
+        (click)="activatePanel(2)"
+      >
+        Panel C
+      </app-tab-trigger>
+      <app-tab-trigger
+      triggerId="trigger-d"
+      panelId="panel-d"
+      [isActive]="activated === 3"
+      (click)="activatePanel(3)"
+    >
+      Panel D
+    </app-tab-trigger>
+    </div>
+
+    <app-tab-panel
+      *ngIf="activated === 0"
+      panelId="panel-a"
+      triggerId="trigger-a"
+    >
+      <p>Panel A</p>
+    </app-tab-panel>
+    <app-tab-panel
+      *ngIf="activated === 1"
+      panelId="panel-b"
+      triggerId="trigger-b"
+    >
+      <p>Panel B</p>
+    </app-tab-panel>
+    <app-tab-panel
+      *ngIf="activated === 2"
+      panelId="panel-c"
+      triggerId="trigger-c"
+    >
+      <p>Panel C</p>
+    </app-tab-panel>
+    <app-tab-panel
+    *ngIf="activated === 3"
+    panelId="panel-d"
+    triggerId="trigger-d"
+  >
+    <p>Panel D</p>
+  </app-tab-panel>
+  </div>
+</main>
